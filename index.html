@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>BMI Calculator!</title>
+</head>
+
+<style>
+    body{
+        background-color : PowderBlue;
+    }
+</style>
+
+<body>
+<h1>Purpose of this website</h1> 
+
+ <p> <em> This is a BMI calculator project. </em>
+     I intend to create a simple webpage which will calculate BMI!
+     The general chart to follow to check your BMI range are :
+ </p>
+ <p> i) Below 18.5 = Underweight. </p> 
+ <p>ii) Between 18.5-24.9 = Healthy!</p>   
+ <p> iii) Between 25.0-29.9 = Overweight</p>   
+ <p>iv) 30.0 and above = Obese!</p> 
+
+
+<hr>
+
+<p>Please enter the units that you want <input type="text"> </p>
+
+<hr>
+
+<p> Enter your height here in kgs :  <input type="number" id="ht"> </p> 
+<p> Enter your weight here in mts : <input type="number" id="wt"></p>
+<p>The calculated result is : <h3 id="result"> </h3>  </p>
+<button onclick = "bmiCalculate()"> calculate </button>
+
+<script>
+    
+    
+    function bmiCalculate() {
+            var height = parseFloat(document.getElementById("ht").value);
+            var weight = parseFloat(document.getElementById("wt").value);
+            var res = (height/(weight*weight));
+            var result = Math.round(res*100)/100;
+            
+            if(result<18.5) {
+                document.getElementById("result").innerHTML = result + " = underweight";
+            }
+            else if(result>=18.5 && result<=24.9) {
+                document.getElementById("result").innerHTML = result + " = Healthy";
+            }
+            else if(result>=25.0 && result<=29.9) {
+                document.getElementById("result").innerHTML = result + " = Overweight";
+            }
+
+            else {
+                document.getElementById("result").innerHTML = result + " = Obese";
+            }
+    }
+    
+</script>
+
+</body>
+</html>
